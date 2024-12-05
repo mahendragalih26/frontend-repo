@@ -6,6 +6,10 @@ import "./globals.css"
 import { Provider } from "react-redux"
 import store from "../store"
 
+// MUI config
+import { ThemeProvider, CssBaseline } from "@mui/material"
+import theme from "../theme/theme"
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,7 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider store={store}>{children}</Provider>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            {children}
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   )
