@@ -41,4 +41,3 @@ next-env.d.ts
 
 # server config
 /apis/firebase.ts
-apis/firebase.ts
